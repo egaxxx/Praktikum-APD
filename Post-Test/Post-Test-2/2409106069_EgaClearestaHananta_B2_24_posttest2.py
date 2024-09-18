@@ -1,8 +1,8 @@
 #input
-Nama = str(input('Masukkan Nama Barang : '))
-Harga = float(input('Masukkan Harga Barang : Rp. '))
-Jumlah_Barang = int(input('Masukkan Jumlah Barang : '))
-Diskon = float(input('Masukkan Diskon (2 Digit Belakang NIM) : '))
+Nama = str(input('Masukkan Nama Barang = '))
+Harga = float(input('Masukkan Harga Barang = Rp. '))
+Jumlah_Barang = int(input('Masukkan Jumlah Barang = '))
+Diskon = float(input('Masukkan Diskon (2 Digit Belakang NIM) = '))
 
 #pra-proses
 Diskon_Persen = Diskon /100
