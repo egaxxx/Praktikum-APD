@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="2b"/>
+        <attribute name="authors" value="SDN_013"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-02 08:29:32 PM"/>
+        <attribute name="created" value="U0ROXzAxMztERVNLVE9QLTY0RzNVUFU7MjAyNC0wOS0yMjswOTowOTozMiBBTTsyODA2"/>
+        <attribute name="edited" value="U0ROXzAxMztERVNLVE9QLTY0RzNVUFU7MjAyNC0xMC0wMjswODoyOTozMiBQTTsyNjsyOTc1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="tinggi, berat, beratideal, tinggicm, beratkg, tinggim" type="Real" array="False" size=""/>
+            <declare name="cara, kesempatan" type="Integer" array="False" size=""/>
+            <declare name="nama, pw, Pilihan" type="String" array="False" size=""/>
+            <assign variable="kesempatan" expression="3"/>
+            <output expression="&quot;Masukkan username dan pasword anda dengan benar&quot; &#13;&#10;&amp;toChar(13)&amp;&quot;anda hanya memiliki 3 kesempatan untuk login&quot;" newline="True"/>
+            <while expression="kesempatan &gt; 0">
+                <output expression="&quot;Masukkan username anda&quot;" newline="True"/>
+                <input variable="nama"/>
+                <output expression="&quot;Masukkan password anda, NIM 3 digit terakhir&quot;" newline="True"/>
+                <input variable="pw"/>
+                <if expression="nama = &quot;ega&quot;&amp;&amp; pw = &quot;88&quot;">
+                    <then>
+                        <assign variable="cara" expression="2"/>
+                        <while expression="cara &gt; 1">
+                            <output expression="&quot;Masukan berat badan anda dalam satuan miligram (1 Kg = 1.000.000 Mg)&quot;" newline="True"/>
+                            <input variable="berat"/>
+                            <output expression="&quot;masukan tinggi badan anda dalam satuan kilometer&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Contoh :&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;150 cm = 1.5 m&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;1.5 m = 0.0015 km&quot;" newline="True"/>
+                            <input variable="tinggi"/>
+                            <assign variable="tinggim" expression="tinggi * 1000"/>
+                            <assign variable="tinggicm" expression="tinggim * 100"/>
+                            <assign variable="beratkg" expression="berat * 0.000001"/>
+                            <assign variable="beratideal" expression="beratkg / (tinggim * tinggim)"/>
+                            <output expression="&quot;indeks massa tubuh :&quot;&amp;beratideal" newline="True"/>
+                            <if expression="beratideal &lt; 18.5">
+                                <then>
+                                    <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Anda kekurangan berat badan&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="beratideal &lt; 24.9">
+                                        <then>
+                                            <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Berat badan anda normal&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="beratideal &lt; 29.9">
+                                                <then>
+                                                    <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Berat badan anda berlebih (Overweight)&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Anda terkena penyakit Obesitas&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                            <output expression="&quot;Apakah anda ingin mengulang lagi? (ya/tidak)&quot;" newline="True"/>
+                            <input variable="Pilihan"/>
+                            <if expression="Pilihan = &quot;ya&quot;">
+                                <then/>
+                                <else>
+                                    <output expression="&quot;Program selesai&quot;" newline="True"/>
+                                    <breakpoint expression="" always="True"/>
+                                </else>
+                            </if>
+                        </while>
+                    </then>
+                    <else>
+                        <assign variable="kesempatan" expression="kesempatan - 1"/>
+                        <output expression="&quot;silahkan coba lagi&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;kesempatan anda sisa &quot;&amp;kesempatan &amp;&quot; kali lagi&quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Anda gagal login&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="return" type="String" variable="return">
+        <parameters/>
+        <body>
+            <declare name="return" type="String" array="False" size=""/>
+        </body>
+    </function>
+</flowgorithm>

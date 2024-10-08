@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="2b"/>
+        <attribute name="authors" value="SDN_013"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-29 09:25:20 PM"/>
+        <attribute name="created" value="U0ROXzAxMztERVNLVE9QLTY0RzNVUFU7MjAyNC0wOS0yMjswOTowOTozMiBBTTsyODA2"/>
+        <attribute name="edited" value="U0ROXzAxMztERVNLVE9QLTY0RzNVUFU7MjAyNC0wOS0yOTswOToyNToyMCBQTTsxMzsyOTgy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="tinggi, berat, beratideal, tinggicm, beratkg, tinggim" type="Real" array="False" size=""/>
+            <output expression="&quot;Masukan berat badan anda dalam satuan miligram (1 Kg = 1.000.000 Mg)&quot;" newline="True"/>
+            <input variable="berat"/>
+            <output expression="&quot;masukan tinggi badan anda dalam satuan kilometer&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Contoh :&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;150 cm = 1.5 m&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;1.5 m = 0.0015 km&quot;" newline="True"/>
+            <input variable="tinggi"/>
+            <assign variable="tinggim" expression="tinggi * 1000"/>
+            <assign variable="tinggicm" expression="tinggim * 100"/>
+            <assign variable="beratkg" expression="berat * 0.000001"/>
+            <assign variable="beratideal" expression="beratkg / (tinggim * tinggim)"/>
+            <output expression="&quot;indeks massa tubuh :&quot;&amp;beratideal" newline="True"/>
+            <if expression="beratideal &lt; 18.5">
+                <then>
+                    <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Anda kekurangan berat badan&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="beratideal &lt; 24.9">
+                        <then>
+                            <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Berat badan anda normal&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="beratideal &lt; 29.9">
+                                <then>
+                                    <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Berat badan anda berlebih (Overweight)&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="ToChar(13)&amp;&quot;Berat Badan : &quot;&amp;beratkg&amp;&quot; kg&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Tinggi Badan : &quot;&amp;tinggicm&amp;&quot; cm&quot;&amp;&#13;&#10;ToChar(13)&amp;&quot;Anda terkena penyakit Obesitas&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
