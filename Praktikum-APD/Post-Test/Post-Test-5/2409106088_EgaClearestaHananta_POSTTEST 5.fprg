@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Post-Test-5"/>
+        <attribute name="authors" value="SDN_013"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-08 08:18:50 AM"/>
+        <attribute name="created" value="U0ROXzAxMztERVNLVE9QLTY0RzNVUFU7MjAyNC0xMC0wNTswOTo0MDozOCBBTTsyODAw"/>
+        <attribute name="edited" value="U0ROXzAxMztERVNLVE9QLTY0RzNVUFU7MjAyNC0xMC0wODswODoxODo1MCBBTTs0MTsyOTYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="username, pilihan, pengunjung, pilihanpengunjung, namabarang1, admin, nama, stok1, jkayu1, jkayu2, jkayu3, jkayu4, input, input1, minat, pilihan1, pertanyaan, pw" type="String" array="False" size=""/>
+            <declare name="t1, t2, t3, t4, divan, lemari, kursi, meja, cara, buy, y, p, looppw, dj, dm, mj, mm, lm, lj, kj, km, total, j1, j2, j3, j4, j5, j6, j7, j8, totalkursi, totaldivan, totallemari, totalmeja, n, loop, m1, m2, k1, k2, l1, l2, d1, d2" type="Integer" array="False" size=""/>
+            <declare name="divanmahoni, divanjati, mejamahoni, mejajati, kursimahoni, kursijati, lemarijati, lemarimahoni" type="Real" array="False" size=""/>
+            <assign variable="mm" expression="0"/>
+            <assign variable="mj" expression="0"/>
+            <assign variable="lj" expression="0"/>
+            <assign variable="lm" expression="0"/>
+            <assign variable="kj" expression="0"/>
+            <assign variable="km" expression="0"/>
+            <assign variable="dj" expression="0"/>
+            <assign variable="dm" expression="0"/>
+            <assign variable="lemarijati" expression="0"/>
+            <assign variable="lemarimahoni" expression="0"/>
+            <assign variable="mejamahoni" expression="0"/>
+            <assign variable="mejajati" expression="0"/>
+            <assign variable="kursimahoni" expression="0"/>
+            <assign variable="kursijati" expression="0"/>
+            <assign variable="divanmahoni" expression="0"/>
+            <assign variable="divanjati" expression="0"/>
+            <comment text="program proses ini di buat agar stok dan harga mulai dari 0"/>
+            <assign variable="cara" expression="1"/>
+            <comment text="kenapa ada proses (cara = 1) supaya program otomatis mendetek true"/>
+            <while expression="cara = 1">
+                <output expression="&quot;Apakah anda pembeli atau admin ? (pembeli atau admin)&quot;" newline="True"/>
+                <input variable="pilihan"/>
+                <if expression="pilihan = &quot;pembeli&quot;">
+                    <then>
+                        <assign variable="buy" expression="1"/>
+                        <while expression="buy = 1">
+                            <output expression="&quot;selamat datang di toko mabel, selamat berbelanja&quot;" newline="True"/>
+                            <output expression="&quot;Kami menjual berbagai furniture&quot;" newline="True"/>
+                            <output expression="&quot;list  barang :&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;meja jati : Rp.3.500.000, STOK :&quot;&amp;mejajati&#13;&#10;&amp;toChar(13)&amp;&quot;meja mahoni : Rp.2.500.000, STOK :&quot;&amp;mejamahoni&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;kursi jati : Rp.2.500.000, STOK :&quot;&amp;kursijati&#13;&#10;&amp;toChar(13)&amp;&quot;kursi mahoni : Rp.1.500.000, STOK :&quot;&amp;kursimahoni&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;divan jati : Rp.5.000.000, STOK :&quot;&amp;divanjati&#13;&#10;&amp;toChar(13)&amp;&quot;divan mahoni : Rp.4.500.000, STOK : &quot;&amp;divanmahoni&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;lemari jati : Rp.3.500.000, STOK : &quot;&amp;lemarijati&#13;&#10;&amp;toChar(13)&amp;&quot;lemari mahoni : Rp.2.500.000, STOK :&quot;&amp;lemarimahoni" newline="True"/>
+                            <output expression="&quot;apakah anda jadi beli ? (ya/tidak)&quot;" newline="True"/>
+                            <input variable="input"/>
+                            <if expression="input = &quot;ya&quot;">
+                                <then>
+                                    <output expression="&quot;list barang : meja, kursi, divan, lemari&quot;" newline="True"/>
+                                    <output expression="&quot;Apa yang anda ingin beli :&quot;" newline="True"/>
+                                    <input variable="pilihanpengunjung"/>
+                                    <if expression="pilihanpengunjung = &quot;meja&quot;">
+                                        <then>
+                                            <output expression="&quot;jenis kayu yang anda ingin beli ? (mahoni/jati)&quot;" newline="True"/>
+                                            <input variable="jkayu1"/>
+                                            <if expression="jkayu1 = &quot;mahoni&quot;">
+                                                <then>
+                                                    <if expression="mejamahoni &gt;= 1">
+                                                        <then>
+                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                            <input variable="M1"/>
+                                                            <assign variable="mm" expression="mm + M1"/>
+                                                            <assign variable="mm" expression="mm * 2500000"/>
+                                                            <assign variable="mejamahoni" expression="mejamahoni -  m1"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                            <input variable="minat"/>
+                                                            <if expression="minat = &quot;ya&quot;">
+                                                                <then>
+                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                    <input variable="M1"/>
+                                                                    <assign variable="mm" expression="mm + M1"/>
+                                                                    <assign variable="mm" expression="mm * 2500000"/>
+                                                                    <assign variable="mejamahoni" expression="mejamahoni -  m1"/>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else>
+                                                    <if expression="jkayu1 = &quot;jati&quot;">
+                                                        <then>
+                                                            <if expression="mejajati &gt;= 1">
+                                                                <then>
+                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                    <input variable="M2"/>
+                                                                    <assign variable="mj" expression="mj + M2"/>
+                                                                    <assign variable="mj" expression="mj * 3500000"/>
+                                                                    <assign variable="mejajati" expression="mejajati - m2"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                                    <input variable="minat"/>
+                                                                    <if expression="minat = &quot;ya&quot;">
+                                                                        <then>
+                                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                            <input variable="M2"/>
+                                                                            <assign variable="mj" expression="mj + M2"/>
+                                                                            <assign variable="mj" expression="mj * 3500000"/>
+                                                                            <assign variable="mejajati" expression="mejajati - m2"/>
+                                                                        </then>
+                                                                        <else/>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Maaf jenis kayu belum tersedia&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <if expression="pilihanpengunjung = &quot;kursi&quot;">
+                                                <then>
+                                                    <output expression="&quot;jenis kayu yang anda ingin beli ? (mahoni/jati)&quot;" newline="True"/>
+                                                    <input variable="jkayu2"/>
+                                                    <if expression="jkayu2 = &quot;mahoni&quot;">
+                                                        <then>
+                                                            <if expression="kursimahoni &gt;= 1">
+                                                                <then>
+                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                    <input variable="k1"/>
+                                                                    <assign variable="km" expression="km + k1"/>
+                                                                    <assign variable="km" expression="km * 2500000"/>
+                                                                    <assign variable="kursimahoni" expression="kursimahoni - k1"/>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                                    <input variable="minat"/>
+                                                                    <if expression="minat = &quot;ya&quot;">
+                                                                        <then>
+                                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                            <input variable="k1"/>
+                                                                            <assign variable="km" expression="km + k1"/>
+                                                                            <assign variable="km" expression="km * 2500000"/>
+                                                                            <assign variable="kursimahoni" expression="kursimahoni - k1"/>
+                                                                        </then>
+                                                                        <else/>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="jkayu2 = &quot;jati&quot;">
+                                                                <then>
+                                                                    <if expression="kursijati &gt;= 1">
+                                                                        <then>
+                                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                            <input variable="k2"/>
+                                                                            <assign variable="kj" expression="kj + k2"/>
+                                                                            <assign variable="kj" expression="kj * 1500000"/>
+                                                                            <assign variable="kursijati" expression="kursijati - k2"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                                            <input variable="minat"/>
+                                                                            <if expression="minat = &quot;ya&quot;">
+                                                                                <then>
+                                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                    <input variable="k2"/>
+                                                                                    <assign variable="kj" expression="kj + k2"/>
+                                                                                    <assign variable="kj" expression="kj * 1500000"/>
+                                                                                    <assign variable="kursijati" expression="kursijati - k2"/>
+                                                                                </then>
+                                                                                <else/>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;maaf jenis kayu tidak tersedia&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else>
+                                                    <if expression="pilihanpengunjung = &quot;lemari&quot;">
+                                                        <then>
+                                                            <output expression="&quot;jenis kayu yang anda ingin beli ? (mahoni/jati)&quot;" newline="True"/>
+                                                            <input variable="jkayu2"/>
+                                                            <if expression="jkayu2 = &quot;mahoni&quot;">
+                                                                <then>
+                                                                    <if expression="lemarimahoni &gt;= 1">
+                                                                        <then>
+                                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                            <input variable="l1"/>
+                                                                            <assign variable="lm" expression="lm + l1"/>
+                                                                            <assign variable="lm" expression="lm * 2500000"/>
+                                                                            <assign variable="lemarimahoni" expression="lemarimahoni - l1"/>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                                            <input variable="minat"/>
+                                                                            <if expression="minat = &quot;ya&quot;">
+                                                                                <then>
+                                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                    <input variable="l1"/>
+                                                                                    <assign variable="lm" expression="lm + l1"/>
+                                                                                    <assign variable="lm" expression="lm * 2500000"/>
+                                                                                    <assign variable="mejamahoni" expression="mejamahoni - m1"/>
+                                                                                </then>
+                                                                                <else/>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else>
+                                                                    <if expression="jkayu2 = &quot;jati&quot;">
+                                                                        <then>
+                                                                            <if expression="lemarijati &gt;= 1">
+                                                                                <then>
+                                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                    <input variable="l2"/>
+                                                                                    <assign variable="lj" expression="lj + l2"/>
+                                                                                    <assign variable="lj" expression="lj * 3500000"/>
+                                                                                    <assign variable="lemarijati" expression="lemarijati - l2"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                                                    <input variable="minat"/>
+                                                                                    <if expression="minat = &quot;ya&quot;">
+                                                                                        <then>
+                                                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                            <input variable="l2"/>
+                                                                                            <assign variable="lj" expression="lj + l2"/>
+                                                                                            <assign variable="lj" expression="lj * 3500000"/>
+                                                                                            <assign variable="lemarijati" expression="lemarijati - l2"/>
+                                                                                        </then>
+                                                                                        <else/>
+                                                                                    </if>
+                                                                                </else>
+                                                                            </if>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;Maaf jenis kayu belum tersedia&quot;" newline="True"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="pilihanpengunjung = &quot;Divan&quot;">
+                                                                <then>
+                                                                    <output expression="&quot;jenis kayu yang anda ingin beli ? (mahoni/jati)&quot;" newline="True"/>
+                                                                    <input variable="jkayu4"/>
+                                                                    <if expression="jkayu4 = &quot;mahoni&quot;">
+                                                                        <then>
+                                                                            <if expression="divanmahoni &lt;= 1">
+                                                                                <then>
+                                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                    <input variable="d1"/>
+                                                                                    <assign variable="dm" expression="dm + d1"/>
+                                                                                    <assign variable="dm" expression="dm * 4500000"/>
+                                                                                    <assign variable="divanmahoni" expression="divanmahoni - d1"/>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                                                    <input variable="minat"/>
+                                                                                    <if expression="minat = &quot;ya&quot;">
+                                                                                        <then>
+                                                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                            <input variable="d1"/>
+                                                                                            <assign variable="dm" expression="dm + d1"/>
+                                                                                            <assign variable="dm" expression="dm * 4500000"/>
+                                                                                            <assign variable="divanmahoni" expression="divanmahoni - d1"/>
+                                                                                        </then>
+                                                                                        <else/>
+                                                                                    </if>
+                                                                                </else>
+                                                                            </if>
+                                                                        </then>
+                                                                        <else>
+                                                                            <if expression="jkayu4 = &quot;jati&quot;">
+                                                                                <then>
+                                                                                    <if expression="divanjati &gt;= 1">
+                                                                                        <then>
+                                                                                            <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                            <input variable="d2"/>
+                                                                                            <assign variable="dj" expression="dj + d2"/>
+                                                                                            <assign variable="dj" expression="dj * 5000000"/>
+                                                                                            <assign variable="divanjati" expression="divanjati - d2"/>
+                                                                                        </then>
+                                                                                        <else>
+                                                                                            <output expression="&quot;Maaf stoknya lagi kosong&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;jika anda masih berminat, kami akan segera mengirimkan ketika stok tersedia.&quot;&#13;&#10;&#13;&#10;&amp;toChar(13)&amp;&quot;Apakah anda masih minat ? (ya/tidak)&quot;" newline="True"/>
+                                                                                            <input variable="minat"/>
+                                                                                            <if expression="minat = &quot;ya&quot;">
+                                                                                                <then>
+                                                                                                    <output expression="&quot;berapa jumlah yang anda ingin beli ?&quot;" newline="True"/>
+                                                                                                    <input variable="d2"/>
+                                                                                                    <assign variable="dj" expression="dj + d2"/>
+                                                                                                    <assign variable="dj" expression="dj * 5000000"/>
+                                                                                                    <assign variable="divanjati" expression="divanjati - d2"/>
+                                                                                                </then>
+                                                                                                <else/>
+                                                                                            </if>
+                                                                                        </else>
+                                                                                    </if>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <output expression="&quot;Maaf jenis kayu belum tersedia&quot;" newline="True"/>
+                                                                                </else>
+                                                                            </if>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                    <assign variable="totalkursi" expression="kj + km"/>
+                                    <assign variable="totaldivan" expression="dj + dm"/>
+                                    <assign variable="totalmeja" expression="mj + mm"/>
+                                    <assign variable="totallemari" expression="lj + lm"/>
+                                    <assign variable="total" expression="totalkursi + totaldivan + totalmeja + totallemari"/>
+                                    <output expression="&quot;Apakah anda ingin membeli barang lain ? (ya/tidak)&quot;" newline="True"/>
+                                    <input variable="pilihan1"/>
+                                    <if expression="pilihan1 = &quot;ya&quot;">
+                                        <then>
+                                            <output expression="&quot;harga barang yang harus dibayarkan senilai : Rp.&quot;&amp;total" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;total belanjaan anda senilai : Rp.&quot;&amp;total" newline="True"/>
+                                            <output expression="&quot;Terima kasih anda sudah membeli, pesanan anda akan segera kami kirim&quot;" newline="True"/>
+                                            <breakpoint expression="" always="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="input = &quot;tidak&quot;">
+                                        <then>
+                                            <assign variable="buy" expression="buy + 1"/>
+                                            <assign variable="cara" expression="cara + 1"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </while>
+                    </then>
+                    <else>
+                        <if expression="pilihan = &quot;admin&quot;">
+                            <then>
+                                <assign variable="looppw" expression="0"/>
+                                <while expression="looppw = 0">
+                                    <output expression="&quot;masukkan username&quot;" newline="True"/>
+                                    <input variable="nama"/>
+                                    <output expression="&quot;Masuukan password&quot;" newline="True"/>
+                                    <input variable="pw"/>
+                                    <comment text="kenapa di kasih username sama pw ? karena supaya tidak ada penyusup yang asal stok barang"/>
+                                    <if expression="nama = &quot;ega&quot;&amp;&amp; pw = &quot;88&quot;">
+                                        <then>
+                                            <assign variable="y" expression="0"/>
+                                            <while expression="y = 0">
+                                                <output expression="&quot;list barang :&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;1. Meja jati (kode : 1)&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;2. Meja Mahoni (kode : 2)&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;3. kursi jati (kode : 3)&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;4. kursi mahoni (kode : 4)&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;5. lemari jati (kode : 5)&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;6. lemari mahoni (kode : 6)&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;7. divan jati (kode : 7)&quot;&#13;&#10;&amp;toChar(13)&amp;&quot;8. divan mahoni (kode : 8)&quot;" newline="True"/>
+                                                <output expression="&quot;masukkan kode barang yang ingin distok &quot;" newline="True"/>
+                                                <input variable="n"/>
+                                                <if expression="n = 1">
+                                                    <then>
+                                                        <output expression="&quot;Stok Meja jati sekarang : &quot;&amp;mejajati" newline="True"/>
+                                                        <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                        <input variable="j1"/>
+                                                        <assign variable="mejajati" expression="mejajati + j1"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="n = 2">
+                                                            <then>
+                                                                <output expression="&quot;Stok Meja mahoni sekarang : &quot;&amp;mejamahoni" newline="True"/>
+                                                                <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                                <input variable="j2"/>
+                                                                <assign variable="mejamahoni" expression="mejamahoni + j2"/>
+                                                            </then>
+                                                            <else>
+                                                                <if expression="n = 3">
+                                                                    <then>
+                                                                        <output expression="&quot;stok kursi jati sekarang : &quot;&amp;kursijati" newline="True"/>
+                                                                        <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                                        <input variable="j3"/>
+                                                                        <assign variable="kursijati" expression="kursijati + j3"/>
+                                                                    </then>
+                                                                    <else>
+                                                                        <if expression="n = 4">
+                                                                            <then>
+                                                                                <output expression="&quot;stok kursi mahoni sekarang : &quot;&amp;kursimahoni" newline="True"/>
+                                                                                <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                                                <input variable="j4"/>
+                                                                                <assign variable="kursimahoni" expression="kursimahoni + j4"/>
+                                                                            </then>
+                                                                            <else>
+                                                                                <if expression="n = 5">
+                                                                                    <then>
+                                                                                        <output expression="&quot;stok lemari jati sekarang : &quot;&amp;lemarijati" newline="True"/>
+                                                                                        <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                                                        <input variable="j5"/>
+                                                                                        <assign variable="lemarijati" expression="lemarijati +j5"/>
+                                                                                    </then>
+                                                                                    <else>
+                                                                                        <if expression="n = 6">
+                                                                                            <then>
+                                                                                                <output expression="&quot;stok lemari mahoni sekarang : &quot;&amp;lemarimahoni" newline="True"/>
+                                                                                                <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                                                                <input variable="j6"/>
+                                                                                                <assign variable="lemarimahoni" expression="lemarimahoni + j6"/>
+                                                                                            </then>
+                                                                                            <else>
+                                                                                                <if expression="n = 7">
+                                                                                                    <then>
+                                                                                                        <output expression="&quot;stok divan jati sekarang : &quot;&amp;divanjati" newline="True"/>
+                                                                                                        <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                                                                        <input variable="j7"/>
+                                                                                                        <assign variable="divanjati" expression="divanjati + j7"/>
+                                                                                                    </then>
+                                                                                                    <else>
+                                                                                                        <if expression="n  = 8">
+                                                                                                            <then>
+                                                                                                                <output expression="&quot;stok divan mahoni sekarang : &quot;&amp;divanmahoni" newline="True"/>
+                                                                                                                <output expression="&quot;Berapa jumlah yang ingin distok ?&quot;" newline="True"/>
+                                                                                                                <input variable="j8"/>
+                                                                                                                <assign variable="divanmahoni" expression="divanmahoni + j8"/>
+                                                                                                            </then>
+                                                                                                            <else/>
+                                                                                                        </if>
+                                                                                                    </else>
+                                                                                                </if>
+                                                                                            </else>
+                                                                                        </if>
+                                                                                    </else>
+                                                                                </if>
+                                                                            </else>
+                                                                        </if>
+                                                                    </else>
+                                                                </if>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                                <assign variable="loop" expression="0"/>
+                                                <while expression="loop = 0">
+                                                    <output expression="&quot;Apakah anda ingin menambah stok lagi? (ya/tidak)&quot;" newline="True"/>
+                                                    <input variable="pertanyaan"/>
+                                                    <if expression="pertanyaan = &quot;ya&quot;">
+                                                        <then>
+                                                            <assign variable="loop" expression="loop + 1"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="pertanyaan = &quot;tidak&quot;">
+                                                                <then>
+                                                                    <assign variable="loop" expression="loop + 1"/>
+                                                                    <assign variable="looppw" expression="looppw + 1"/>
+                                                                    <assign variable="y" expression="y + 1"/>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </while>
+                                            </while>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;password atau username yang anda masukkin salah&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </while>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Terima kasih telah mengunjungin toko kami&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
